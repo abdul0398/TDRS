@@ -297,7 +297,7 @@
                         const res = (fixedincome + (Variableincome * 0.7)) * 0.55;
                         console.log(fixedincome, Variableincome)
                         animateNumber(res,"income_total");
-                        animateNumber(debt,"cal_mortage");
+                        // animateNumber(debt,"cal_mortage");
                         animateNumber(res - debt,"cal_mortage_big");
                       }
 
@@ -320,7 +320,10 @@
                         } else {
                             if(currentNumber + increment >= end){
                                 currentNumber = end
+                                console.log(currentNumber)
                                 currentNumber = Math.floor(currentNumber)
+                                counterElement.textContent = "$" + currentNumber;
+                                clearInterval(intervalId); ;
                             }else{
                                 currentNumber += increment;
                             }
